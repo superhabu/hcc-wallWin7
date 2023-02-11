@@ -1,0 +1,5 @@
+add-type -typedefinition "using System;`n using System.Runtime.InteropServices;`n public class PInvoke { [DllImport(`"user32.dll`")] public static extern bool SetSysColors(int cElements, int[] lpaElements, int[] lpaRgbValues); }"
+
+# Now to get your desktop to instantly turn purple, run it with:
+[PInvoke]::SetSysColors(1, @(1), @(0x444444))
+# Or tack it on the end of above for a true one-line experience.
